@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "Reshenia Backend",
+    "_postman_id": "reshenia-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"{{adminEmail}}\",\"password\":\"{{adminPassword}}\"}"
+        },
+        "url": "{{baseUrl}}/auth/login"
+      }
+    },
+    {
+      "name": "Get Listings",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/listings"
+      }
+    },
+    {
+      "name": "Unlock Listing",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/listings/unlock/1"
+      }
+    },
+    {
+      "name": "Payments Channels",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/payments/channels"
+      }
+    },
+    {
+      "name": "Groups",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/groups"
+      }
+    },
+    {
+      "name": "Activate Group",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/groups/activate/1"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4001"
+    },
+    {
+      "key": "adminEmail",
+      "value": "admin@example.com"
+    },
+    {
+      "key": "adminPassword",
+      "value": "admin123"
+    }
+  ]
+}

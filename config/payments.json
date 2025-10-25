@@ -1,0 +1,10 @@
+{
+  "channels": [
+    "airtel",
+    "mtn",
+    "zamtel",
+    "zanaco"
+  ],
+  "group_activation_fee_zmw": 20,
+  "notes": "Replace env numbers with real merchant/account identifiers."
+}

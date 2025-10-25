@@ -1,0 +1,1 @@
+export function requireAdminKey(req,res,next){const k=req.header('x-admin-key');if(!process.env.ADMIN_API_KEY)return res.status(500).json({error:'ADMIN_API_KEY not configured'});if(k!==process.env.ADMIN_API_KEY)return res.status(401).json({error:'Invalid admin key'});next();}

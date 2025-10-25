@@ -1,0 +1,43 @@
+{
+  "services": [
+    "plumber",
+    "electrician",
+    "auto_mechanic",
+    "brick_layer",
+    "carpenter",
+    "tuition",
+    "other"
+  ],
+  "goods": [
+    "general_goods",
+    "furniture",
+    "appliances",
+    "electronics"
+  ],
+  "accommodation": [
+    "hotel_rooms",
+    "houses",
+    "bed_seaters",
+    "camping_sites",
+    "shared_rooms"
+  ],
+  "transport": [
+    "car_hire",
+    "bus_tickets"
+  ],
+  "property": [
+    "plots",
+    "land",
+    "farms",
+    "houses"
+  ],
+  "jobs": [
+    "employers_posts",
+    "registered_maids_center_only"
+  ],
+  "lost_and_found": [
+    "lost_items",
+    "lost_persons",
+    "stolen_recovery"
+  ]
+}

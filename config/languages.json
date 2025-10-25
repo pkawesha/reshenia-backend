@@ -1,0 +1,9 @@
+{
+  "default": "en",
+  "supported": [
+    "en",
+    "ny",
+    "bemba",
+    "tonga"
+  ]
+}

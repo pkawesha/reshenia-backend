@@ -1,0 +1,11 @@
+{
+  "default_percent": 5.0,
+  "referral_bonus_percent": 2.0,
+  "category_overrides": {
+    "land": 1.5,
+    "houses": 2.0,
+    "accommodation": 5.0,
+    "car_hire": 5.0,
+    "services": 5.0
+  }
+}
