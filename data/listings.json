@@ -1,0 +1,7 @@
+{
+  "items": [
+    {"id":1,"type":"accommodation","title":"2-Bedroom House","location":"Chipata","priceZMW":4500,"contactHidden":true,"phone":"****","owner":"TBD"},
+    {"id":2,"type":"car_hire","title":"Toyota Corolla (Daily)","location":"Lusaka","priceZMW":900,"contactHidden":true,"phone":"****","owner":"TBD"},
+    {"id":3,"type":"land","title":"2 Hectares Farm Plot","location":"Petauke","priceZMW":120000,"contactHidden":true,"phone":"****","owner":"TBD"}
+  ]
+}
