@@ -1,1 +1,25 @@
-{ "items": [] }
+{
+  "items": [
+    {
+      "id": 1,
+      "organization": "UNDP",
+      "title": "Statistician",
+      "location": "Lusaka",
+      "applyUrl": "https://jobs.undp.org"
+    },
+    {
+      "id": 2,
+      "organization": "COMESA",
+      "title": "Trade Policy Officer",
+      "location": "Lusaka",
+      "applyUrl": "https://www.comesa.int"
+    },
+    {
+      "id": 3,
+      "organization": "African Union (AU)",
+      "title": "Policy Analyst",
+      "location": "Addis Ababa",
+      "applyUrl": "https://careers.au.int"
+    }
+  ]
+}
