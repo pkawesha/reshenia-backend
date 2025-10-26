@@ -40,15 +40,42 @@ app.get("/health", (_req, res) =>
   res.json({ ok: true, service: "reshenia", now: new Date().toISOString() })
 );
 
-// --- legal / disclaimer (restored)
+// 
 app.get("/api/legal/terms", (_req, res) => {
   res.type("text/plain").send(
-`Reshenia Terms (Short)
-1) Reshenia is an adverts platform. We are not a party to user transactions and do not hold client funds.
-2) Unlocking contact details is informational only; perform your own due diligence.
-3) Jobs: employers pay to post; job-seekers view contacts free.
-4) Security is best-effort; protect your devices, passwords, and personal data.
-5) Lost & Found and Scholarships are free to support community access.`
+`Reshenia Opportunities - Legal Disclaimer and Terms of Use
+
+1. Platform Scope:
+   Reshenia Opportunities (the "Platform") is a listings and information service that allows users to advertise goods, services, land, employment, groups, and community activities including Chilimba, AU/UN/COMESA jobs, and lost & found announcements.
+
+2. Transactions:
+   The Platform does not participate in, intermediate, or guarantee any payments, transactions, or transfers between users. 
+   All transactions, agreements, or exchanges of money are strictly between the parties involved. Reshenia does not hold, receive, or refund any funds on behalf of users.
+
+3. Verification:
+   While the Platform encourages legitimate postings, it does not independently verify ownership, authenticity, or accuracy of any listing or claim.
+   Users must conduct their own due diligence before making payments, sharing personal data, or visiting any property or contact.
+
+4. Communication and Contact:
+   “Call” and “WhatsApp” buttons are provided for convenience only. Users communicate directly at their own discretion and risk. 
+   Reshenia does not record or monitor such communications.
+
+5. Employment and External Opportunities:
+   Job listings under UN, AU, COMESA, or similar organizations are provided for public convenience.
+   Applicants are encouraged to confirm vacancies directly through the respective official portals.
+
+6. Lost and Found / Community Notices:
+   Lost, stolen, or found property posts are provided as a free public service.
+   Reshenia accepts no liability for recovery outcomes or related actions.
+
+7. Data and Privacy:
+   Contact information shared in listings is voluntary. The Platform does not sell personal data to third parties.
+
+8. Limitation of Liability:
+   Reshenia Opportunities, its developers, and affiliates are not liable for any direct or indirect losses, damages, or fraud arising from the use of the Platform or interactions between users.
+
+9. Acceptance:
+   By using this application, you acknowledge and accept these terms and agree to use the Platform lawfully and responsibly.`
   );
 });
 
@@ -98,8 +125,19 @@ app.post("/api/chilimba", (req, res) => {
   res.json({ ok: true, id: nextId });
 });
 
+// --- jobs (AU / UN / COMESA) — JSON-backed
+app.get("/api/jobs", (_req, res) => res.json(readJSON(jobsPath)));
+app.post("/api/jobs", (req, res) => {
+  const db = readJSON(jobsPath);
+  const nextId = (db.items.at(-1)?.id || 0) + 1;
+  db.items.push({ id: nextId, ...req.body });
+  writeJSON(jobsPath, db);
+  res.json({ ok: true, id: nextId });
+});
+
 // --- start
 const PORT = process.env.PORT || 4001;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`[Reshenia API] listening on http://localhost:${PORT}`);
 });
+
